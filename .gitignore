@@ -1,6 +1,4 @@
-﻿database/*.cfg
-database/*.json
+﻿*.token
 *.key
-*.token
+.env
 __pycache__/
-*.bin
