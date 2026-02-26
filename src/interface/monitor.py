@@ -1,20 +1,30 @@
 ﻿import tkinter as tk
-from tkinter import simpledialog
-import os
+from tkinter import messagebox
+import pystray
+from PIL import Image, ImageDraw
 
-def solicitar_token():
-    root = tk.Tk()
-    root.withdraw()  # Ocultar ventana principal
-    token = simpledialog.askstring("🏛️ SEGURIDAD VIRGILIO", "Soberano, introduzca el nuevo GitHub Token:", show='*')
-    if token:
-        # Guardar localmente en un archivo que el .gitignore ignora
-        with open("secrets.token", "w") as f:
-            f.write(token)
-        print("✅ TOKEN SELLADO LOCALMENTE. Virgilio tiene permiso de subida.")
-    else:
-        print("❌ ACCESO DENEGADO. Virgilio operará en modo lectura.")
-    root.destroy()
+class VirgilioMonitor:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.withdraw()
+        self.setup_tray()
+
+    def setup_tray(self):
+        img = Image.new('RGB', (64, 64), (138, 43, 226)) # Violeta
+        d = ImageDraw.Draw(img)
+        d.text((20, 20), "V", fill="white")
+        
+        menu = pystray.Menu(
+            pystray.MenuItem("Estado: Operativo", lambda: None),
+            pystray.MenuItem("Abrir Laboratorio", lambda: os.startfile("C:/CAMASOTS_V1")),
+            pystray.MenuItem("Salir", self.quit)
+        )
+        self.icon = pystray.Icon("Virgilio", img, "Virgilio Agente", menu)
+        self.icon.run()
+
+    def quit(self):
+        self.icon.stop()
+        self.root.quit()
 
 if __name__ == "__main__":
-    solicitar_token()
-    # Aquí arrancaría el Tray Icon después de validar el token
+    VirgilioMonitor()
