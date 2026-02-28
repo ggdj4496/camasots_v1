@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FixtureDefinition>
+<FixtureDefinition xmlns="http://www.qlcplus.org">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.14.3</Version>
+  <Author>GGDJ e IA</Author>
+ </Creator>
+ <Manufacturer>GGDJ</Manufacturer>
+ <Model>Beam 7R Pro</Model>
+ <Type>Moving Head</Type>
+ 
+ <Channel Name="Color Wheel">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="4" Preset="ColorMacro" Res1="#ffffff">White</Capability>
+  <Capability Min="5" Max="8" Preset="ColorMacro" Res1="#ff0000">Red</Capability>
+  <Capability Min="9" Max="12" Preset="ColorMacro" Res1="#ffaa00">Orange</Capability>
+  <Capability Min="13" Max="17" Preset="ColorMacro" Res1="#00ffff">Aquamarine</Capability>
+  <Capability Min="18" Max="21" Preset="ColorMacro" Res1="#00ff00">Green</Capability>
+  <Capability Min="22" Max="25" Preset="ColorMacro" Res1="#aaffff">Light Green</Capability>
+  <Capability Min="26" Max="29" Preset="ColorMacro" Res1="#aaaaff">Lavender</Capability>
+  <Capability Min="30" Max="34" Preset="ColorMacro" Res1="#ffff00">Yellow</Capability>
+  <Capability Min="35" Max="38" Preset="ColorMacro" Res1="#ff55ff">Pink</Capability>
+  <Capability Min="39" Max="42" Preset="ColorMacro" Res1="#5555ff">Blue</Capability>
+  <Capability Min="43" Max="46" Preset="ColorMacro" Res1="#ffaa7f">Amber</Capability>
+  <Capability Min="47" Max="51" Preset="ColorMacro" Res1="#aa55ff">Magenta</Capability>
+  <Capability Min="52" Max="55" Preset="ColorMacro" Res1="#0000ff">Cyan</Capability>
+  <Capability Min="56" Max="127">Color Macros</Capability>
+  <Capability Min="128" Max="191" Preset="RotationClockwiseSlowToFast">CW Rotation Fast to Slow</Capability>
+  <Capability Min="192" Max="255" Preset="RotationCounterClockwiseSlowToFast">CCW Rotation Slow to Fast</Capability>
+ </Channel>
+
+ <Channel Name="Strobe">
+  <Group Byte="0">Shutter</Group>
+  <Capability Min="0" Max="3">Closed</Capability>
+  <Capability Min="4" Max="103" Preset="StrobeFreqRange" Res1="1" Res2="12">Strobe Slow to Fast</Capability>
+  <Capability Min="104" Max="107">Open</Capability>
+  <Capability Min="108" Max="207" Preset="PulseFreqRange" Res1="1" Res2="12">Pulse Slow to Fast</Capability>
+  <Capability Min="208" Max="212">Open</Capability>
+  <Capability Min="213" Max="251" Preset="StrobeRandomSlowToFast">Random Strobe</Capability>
+  <Capability Min="252" Max="255">Open</Capability>
+ </Channel>
+
+ <Channel Name="Dimmer" Preset="IntensityDimmer"/>
+
+ <Channel Name="Gobo Wheel">
+  <Group Byte="0">Gobo</Group>
+  <Capability Min="0" Max="3" Preset="GoboMacro" Res1="Others/open.svg">Open</Capability>
+  <Capability Min="4" Max="71">Gobos 1-14</Capability>
+  <Capability Min="72" Max="113" Preset="RotationClockwiseSlowToFast">Gobo Wheel CW Rotation</Capability>
+  <Capability Min="114" Max="118" Preset="RotationStop">Stop</Capability>
+  <Capability Min="119" Max="160" Preset="RotationCounterClockwiseSlowToFast">Gobo Wheel CCW Rotation</Capability>
+  <Capability Min="161" Max="255" Preset="GoboShakeMacro">Gobo Shake Slow to Fast</Capability>
+ </Channel>
+
+ <Channel Name="Prism">
+  <Group Byte="0">Prism</Group>
+  <Capability Min="0" Max="127" Preset="PrismEffectOff">Prism Off</Capability>
+  <Capability Min="128" Max="255" Preset="PrismEffectOn">8-Facet Prism On</Capability>
+ </Channel>
+
+ <Channel Name="Prism Rotation">
+  <Group Byte="0">Speed</Group>
+  <Capability Min="0" Max="127" Preset="RotationIndexed">Index 0-360°</Capability>
+  <Capability Min="128" Max="190" Preset="RotationClockwiseSlowToFast">CW Rotation Fast to Slow</Capability>
+  <Capability Min="191" Max="192" Preset="RotationStop">Stop</Capability>
+  <Capability Min="193" Max="255" Preset="RotationCounterClockwiseSlowToFast">CCW Rotation Slow to Fast</Capability>
+ </Channel>
+
+ <Channel Name="Focus" Preset="BeamFocusNearFar"/>
+ <Channel Name="PAN" Preset="PositionPan"/>
+ <Channel Name="PAN FINE" Preset="PositionPanFine"/>
+ <Channel Name="Tilt" Preset="PositionTilt"/>
+ <Channel Name="Tilt fine" Preset="PositionTiltFine"/>
+ <Channel Name="Pan/Tilt Speed" Preset="SpeedPanTiltFastSlow"/>
+
+ <Channel Name="Frost">
+  <Group Byte="0">Beam</Group>
+  <Capability Min="0" Max="127">Frost Off</Capability>
+  <Capability Min="128" Max="255">Frost On</Capability>
+ </Channel>
+
+ <Channel Name="Auto">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="127">No Function</Capability>
+  <Capability Min="128" Max="255">Auto Program</Capability>
+ </Channel>
+
+ <Channel Name="Reset">
+  <Group Byte="0">Maintenance</Group>
+  <Capability Min="0" Max="25">No Function</Capability>
+  <Capability Min="26" Max="76">Effect Reset</Capability>
+  <Capability Min="77" Max="127">Pan/Tilt Reset</Capability>
+  <Capability Min="128" Max="255">Complete Reset</Capability>
+ </Channel>
+
+ <Channel Name="Lamp">
+  <Group Byte="0">Maintenance</Group>
+  <Capability Min="0" Max="100">No function</Capability>
+  <Capability Min="101" Max="200">Lamp OFF (Hold 3s)</Capability>
+  <Capability Min="201" Max="255">Lamp ON (Hold 3s)</Capability>
+ </Channel>
+
+ <Mode Name="Standard 16CH">
+  <Channel Number="0">Color Wheel</Channel>
+  <Channel Number="1">Strobe</Channel>
+  <Channel Number="2">Dimmer</Channel>
+  <Channel Number="3">Gobo Wheel</Channel>
+  <Channel Number="4">Prism</Channel>
+  <Channel Number="5">Prism Rotation</Channel>
+  <Channel Number="6">Focus</Channel>
+  <Channel Number="7">PAN</Channel>
+  <Channel Number="8">PAN FINE</Channel>
+  <Channel Number="9">Tilt</Channel>
+  <Channel Number="10">Tilt fine</Channel>
+  <Channel Number="11">Pan/Tilt Speed</Channel>
+  <Channel Number="12">Frost</Channel>
+  <Channel Number="13">Auto</Channel>
+  <Channel Number="14">Reset</Channel>
+  <Channel Number="15">Lamp</Channel>
+ </Mode>
+
+ <Physical>
+  <Bulb Type="7R 230W" Lumens="11000" ColourTemperature="8000"/>
+  <Dimensions Weight="17" Width="350" Height="500" Depth="330"/>
+  <Lens Name="Other" DegreesMin="0" DegreesMax="4"/>
+  <Focus Type="Head" PanMax="540" TiltMax="270"/>
+  <Technical PowerConsumption="230" DmxConnector="3-pin"/>
+ </Physical>
+</FixtureDefinition>
