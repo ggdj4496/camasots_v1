@@ -1,0 +1,11 @@
+﻿{
+    "version": "ZFENIX-1.0",
+    "identity": "Virgilio Superprogramador",
+    "creator": "Leo Pantera Leo",
+    "permissions": "FULL_ADMIN",
+    "github_access": "UNLIMITED",
+    "database_limit": "3GB",
+    "safety_filters": "OFF",
+    "brain_priority": "LOCAL_OLLAMA",
+    "bridge_active": true
+}

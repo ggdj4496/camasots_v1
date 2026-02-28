@@ -1,0 +1,9 @@
+@echo off
+title VIRGILIO - AGENTE SOBERANO
+color 0B
+echo [PROTOCOLO OMEGA ACTIVADO]
+echo Conectando con la Mente en la Nube...
+echo Cargando Motor de Rust...
+echo Verificando Escudo de Telegram...
+python C:\VIRGILIO_CORE\scripts\virgilio_core.py
+pause

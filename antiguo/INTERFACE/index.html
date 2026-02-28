@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VIRGILIO OS - DASHBOARD</title>
+    <style>
+        body { background: #050505; color: #00ffcc; font-family: 'Segoe UI', monospace; margin: 0; overflow: hidden; }
+        .grid { display: grid; grid-template-columns: 250px 1fr; height: 100vh; }
+        .sidebar { border-right: 1px solid #333; padding: 20px; background: #0a0a0a; }
+        .main { padding: 20px; display: flex; flex-direction: column; }
+        .card { background: #111; border: 1px solid #00ffcc44; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        .monitor { flex-grow: 1; background: #000; border: 1px solid #333; padding: 15px; overflow-y: auto; font-size: 0.9em; color: #888; }
+        h1 { font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #00ffcc; padding-bottom: 10px; }
+        .stat { color: #ff00ff; font-weight: bold; }
+        .msg-entry { border-left: 2px solid #00ffcc; padding-left: 10px; margin-bottom: 10px; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="sidebar">
+            <h1>Soberano</h1>
+            <p>Estado: <span class="stat">ROOT_ADMIN</span></p>
+            <p>Créditos: <span class="stat">567 VIP</span></p>
+            <p>Nodo: <span style="color:yellow">-2703559168</span></p>
+            <hr color="#333">
+            <button onclick="location.reload()" style="width:100%; background:#00ffcc; border:none; padding:10px; cursor:pointer; font-weight:bold;">RECARGAR NODO</button>
+        </div>
+        <div class="main">
+            <div class="card">
+                <h2>MONITOR DE ASIMILACIÓN EN VIVO</h2>
+                <p>Capturando datos del nodo central hacia la Bóveda...</p>
+            </div>
+            <div id="chat" class="monitor">
+                <div class="msg-entry">> Iniciando protocolo de escucha...</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function updateMonitor() {
+            const response = await fetch('/api/messages');
+            const data = await response.json();
+            const container = document.getElementById('chat');
+            container.innerHTML = data.messages.map(m => <div class="msg-entry"><b>[SYSTEM]</b>: </div>).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+        setInterval(updateMonitor, 3000);
+    </script>
+</body>
+</html>
